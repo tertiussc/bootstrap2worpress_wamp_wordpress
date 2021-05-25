@@ -4,13 +4,32 @@
  */
 
 // Homepage Custom Fields
-$prelaunch_price        = get_post_meta($post->ID, 'prelaunch_price', true);
-$launch_price           = get_post_meta($post->ID, 'launch_price', true);
-$final_price            = get_post_meta($post->ID, 'final_price', true);
-$course_url             = get_post_meta($post->ID, 'course_url', true);
-$button_text            = get_post_meta($post->ID, 'button_text', true);
-$optin_text             = get_post_meta($post->ID, 'optin_text', true);
-$optin_button_text      = get_post_meta($post->ID, 'optin_button_text', true);
+$prelaunch_price                = get_post_meta($post->ID, 'prelaunch_price', true);
+$launch_price                   = get_post_meta($post->ID, 'launch_price', true);
+$final_price                    = get_post_meta($post->ID, 'final_price', true);
+$course_url                     = get_post_meta($post->ID, 'course_url', true);
+$button_text                    = get_post_meta($post->ID, 'button_text', true);
+$optin_text                     = get_post_meta($post->ID, 'optin_text', true);
+$optin_button_text              = get_post_meta($post->ID, 'optin_button_text', true);
+
+
+// Advanced custom fields
+$income_feature_image           = get_field('income_feature_image'); //this is an array can be used like a object
+$income_feature_image_url       = get_field('income_feature_image')['url'];
+$income_section_title           = get_field('income_section_title');
+$income_section_description     = get_field('income_section_description');
+$reason_1_title                 = get_field('reason_1_title');
+$reason_1_description           = get_field('reason_1_description');
+$reason_2_title                 = get_field('reason_2_title');
+$reason_2_description           = get_field('reason_2_description');
+
+$who_title                      = get_field('who_title');
+$who_image                      = get_field('who_image');
+$who_body                       = get_field('who_body');
+
+$course_features_image          = get_field('course_features_image');
+$course_features_title          = get_field('course_features_title');
+$course_features_body           = get_field('course_features_body');
 
 get_header();
 ?>
@@ -68,23 +87,20 @@ get_header();
     <section id="boost-your-income" class="section">
         <div class="container">
             <div class="section-header text-center">
-                <img class="mt-2" src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-boost.png" alt="Chart">
-                <h2>How you can boost your income</h2>
-                <p>Whether you’re a freelance designer, entrepreneur, employee for a company, code hobbyist, or looking
-                    for a new career — this course gives you an immensely valuable skill that will enable you to either:
-                </p>
+                <?php
+                    if(!empty($income_feature_image)) :  ?>
+                        <img src="<?php echo $income_feature_image['url'] ?>" alt="<?php echo $income_feature_image['alt'] ?>">
+                <?php endif; ?>
+                <h2><?php echo $income_section_title ?></h2>
+                <p><?php echo $income_section_description ?></p>
                 <div class="row">
                     <div class="col-sm-6 text-center">
-                        <h3>Make money on the side</h3>
-                        <p>So you can save up for that Hawaiian vacation you’ve been wanting, help pay off your debt,
-                            your car, your mortgage, or simply just to have bonus cash laying around.</p>
+                        <h3><?php echo $reason_1_title ?></h3>
+                        <p><?php echo $reason_1_description ?></p>
                     </div>
                     <div class="col-sm-6 text-center">
-                        <h3>Create fulltime income</h3>
-                        <p>WordPress developers have options. Many developers make a generous living off of creating
-                            custom WordPress themes and selling them on websites like ThemeForest. Freelance designers
-                            and developers can also take on WordPress projects and make an extra $1,000 - $5,000+ per
-                            month.</p>
+                        <h3><?php echo $reason_2_title ?></h3>
+                        <p><?php echo $reason_2_description ?></p>
                     </div>
                 </div>
             </div>
@@ -95,77 +111,46 @@ get_header();
     <section id="who benefits" class="bg-white section">
         <div class="container">
             <div class="section-header">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-pad.png" alt="Pad and Pancil">
-                <h2>Who should take this course</h2>
+            <?php if(!empty($who_image)) :  ?>
+                        <img src="<?php echo $who_image['url'] ?>" alt="<?php echo $who_image['alt'] ?>">
+                <?php endif; ?>
+                
+                <h2><?php echo $who_title ?></h2>
             </div>
             <div class="row">
                 <div class="col-sm-6 offset-sm-3">
-                    <h2>Graphic & Web Designers</h2>
-                    <p>Graphic designers are extremely talented, but ask them to code their designs and they’ll freeze
-                        up! This leaves them with no other choice but to hire a web developer. Any professional graphic
-                        designers knows web developers can be expensive.</p>
-                    <p>If you’re a designer, learning to code your own WordPress websites can change your business
-                        entirely! Now, not only are you a great designer, but you’re a skillful developer, too! This
-                        puts you in a position to make an extra $1,000 – $5,000 per project.</p>
-                    <h2>Entrepreneurs</h2>
-                    <p>Entrepreneurs have big dreams, and in many cases, shoestring budgets. In order to survive in the
-                        cut-throat world of the Startup company, it’s a necessity to have a world-class website.
-                        However, world-class websites come with a large price tag.</p>
-                    <p>If you can learn how to build a high-quality startup website by yourself, then you’ve just saved
-                        yourself a lot of cash, tens of thousands of dollars in many cases.</p>
-                    <h2>Employees</h2>
-                    <p>Any company knows the education & training of their employees is key to a thriving team.</p>
-                    <p>Depending on the type of company you work for, if you understand how to code, and can develop
-                        CMS driven websites, that gives you negotiating power for a better position, or a higher salary.
-                    </p>
-                    <h2>Code Hobbyists</h2>
-                    <p>It’s fun to learn challenging new skills. Code hobbyists can add dynamic websites to their
-                        arsenal of tools to play with — you can even sell WordPress themes and plugins for cash! The
-                        possibilities are truly endless.</p>
-                    <h2>People Looking for a New Career</h2>
-                    <p>Are you out of work? Looking for a more rewarding job? Desire a career that can allow you to
-                        work almost anywhere in the world? Becoming a Web Developer might be the answer for you.</p>
-                    <h2>Web developers are paid well, anywhere from $33,000 to more than $105,000 per year.</h2>
-                    <p>They get to work at amazing companies that are changing the world, or they enjoy the ability to
-                        start their own companies, become location-independent and work from home, from coffee shops, in
-                        an airplane, on the beach, or wherever they want!</p>
+                    <?php echo $who_body; ?>
                 </div>
             </div>
         </div>
     </section>
-
     <!-- Course Features -->
     <section id="course-features" class="section">
         <div class="container">
             <div class="section-header">
-                <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/icon-rocket.png" alt="Rocket">
-                <h2>Course Features</h2>
+                <!-- feature section image -->
+                <?php if(!empty($course_features_image)) :  ?>
+                    <img src="<?php echo $course_features_image['url'] ?>" alt="<?php echo $course_features_image['alt'] ?>">
+                <?php endif; ?>
+                <!-- Feature section title -->
+                <h2><?php echo $course_features_title ?></h2>
+                <!-- Feature section body (optional) -->
+                <?php if(!empty($course_features_body)) :  ?>
+                    <p class="lead"><?php echo $course_features_body ?></p>
+                <?php endif; ?>
             </div>
             <div class="row">
+            <!-- Feature section sprite icons -->
+            <!-- Create Loop -->
+                <?php $loop = new WP_Query(array('post_type' => 'course_feature', 'order_by' => 'post_id', 'order' => 'ASC')); ?>
+                <!-- loop through the posts -->
+                <?php while($loop -> have_posts()) : $loop -> the_post(); ?>
+
                 <div class="col-sm-2">
-                    <i class="ci ci-computer"></i>
-                    <h4>Lifetime access to 80+ lectures</h4>
+                    <i class="<?php the_field('course_features_icon') ?>"></i>
+                    <h4><?php the_title(); ?></h4>
                 </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-watch"></i>
-                    <h4>10+ hours of HD video content</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-calendar"></i>
-                    <h4>30-day money back guarantee</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-community"></i>
-                    <h4>Access to a community of like minded students</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-instructor"></i>
-                    <h4>Direct access t the Instructor</h4>
-                </div>
-                <div class="col-sm-2">
-                    <i class="ci ci-device"></i>
-                    <h4>Accessible content on mobile devices</h4>
-                </div>
+                    <?php endwhile; ?>
             </div>
         </div>
     </section>
