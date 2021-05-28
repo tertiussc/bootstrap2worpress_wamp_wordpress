@@ -13,7 +13,7 @@ $optin_text                     = get_post_meta($post->ID, 'optin_text', true);
 $optin_button_text              = get_post_meta($post->ID, 'optin_button_text', true);
 
 // Advanced custom fields
-$income_feature_image           = get_field('income_feature_image'); //this is an array can be used like a object
+$income_feature_image           = get_field('income_feature_image');
 $income_feature_image_url       = get_field('income_feature_image')['url'];
 $income_section_title           = get_field('income_section_title');
 $income_section_description     = get_field('income_section_description');
@@ -270,75 +270,22 @@ get_header();
         <div class="row">
             <div class="col-sm-8 offset-sm-2">
                 <h2 class="text-center">What people are saying about Brad</h2>
+                <?php $loop = new WP_Query(array('post_type' => 'testimonial', 'orderby' => 'post_id', 'order' =>'ASC')); ?>
+                <?php while ($loop-> have_posts()) : $loop->the_post(); ?>
                 <div class="row testimoniel mt-3">
                     <div class="col-sm-4">
-                        <img class="rounded-circle"
-                            src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/brennan.jpg" alt="Brennan">
+                        <?php if(has_post_thumbnail()) {
+                            the_post_thumbnail(array(200, 200));
+                        } ?>
                     </div>
                     <div class="col-sm-8">
-                        <blockquote class="mt-3 bg-light rounded border-start border-dark border-3">Proin nec arcu
-                            ac massa tristique
-                            eleifend.
-                            Pellentesque
-                            habitant
-                            morbi
-                            tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam feugiat metus
-                            sit amet gravida feugiat. Vestibulum varius suscipit ligula, sed sodales libero placerat
-                            vel. Quisque lacinia eros ligula, eu tincidunt ligula semper eu.
-                            <cite class="text-end">&mdash; Brennan, graduate of all of Brad's courses</cite>
+                        <blockquote class="mt-3 bg-light rounded border-start border-dark border-3">
+                            <?php the_content();  ?>
+                            <cite class="text-end">&mdash; <?php the_title(); ?></cite>
                         </blockquote>
                     </div>
                 </div>
-                <div class="row testimoniel mt-3">
-                    <div class="col-sm-4">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ben.png" alt="Ben">
-                    </div>
-                    <div class="col-sm-8">
-                        <blockquote class="mt-3 bg-light rounded border-start border-dark border-3">Proin nec arcu
-                            ac massa tristique
-                            eleifend.
-                            Pellentesque
-                            habitant
-                            morbi
-                            tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam feugiat metus
-                            sit amet gravida feugiat. Vestibulum varius suscipit ligula, sed sodales libero placerat
-                            vel. Quisque lacinia eros ligula, eu tincidunt ligula semper eu.
-                            <cite class="text-end">&mdash; Ben, also cool</cite>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="row testimoniel mt-3">
-                    <div class="col-sm-4">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/aj.png" alt="AJ">
-                    </div>
-                    <div class="col-sm-8">
-                        <blockquote class="mt-3 bg-light rounded border-start border-dark border-3">Proin nec arcu
-                            ac massa tristique eleifend. Pellentesque habitant morbi tristique senectus et netus et
-                            malesuada fames ac turpis egestas. Aliquam feugiat metus
-                            sit amet gravida feugiat. Vestibulum varius suscipit ligula, sed sodales libero placerat
-                            vel. Quisque lacinia eros ligula, eu tincidunt ligula semper eu.
-                            <cite class="text-end">&mdash; AJ</cite>
-                        </blockquote>
-                    </div>
-                </div>
-                <div class="row testimoniel mt-3">
-                    <div class="col-sm-4">
-                        <img src="<?php bloginfo('stylesheet_directory'); ?>/assets/img/ernest.png" alt="Ernest">
-                    </div>
-                    <div class="col-sm-8">
-                        <blockquote class="mt-3 bg-light rounded border-start border-dark border-3">Proin nec arcu
-                            ac massa tristique
-                            eleifend.
-                            Pellentesque
-                            habitant
-                            morbi
-                            tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam feugiat metus
-                            sit amet gravida feugiat. Vestibulum varius suscipit ligula, sed sodales libero placerat
-                            vel. Quisque lacinia eros ligula, eu tincidunt ligula semper eu.
-                            <cite class="text-end">&mdash; Ernest</cite>
-                        </blockquote>
-                    </div>
-                </div>
+                <?php endwhile; ?>
             </div>
         </div>
     </div>

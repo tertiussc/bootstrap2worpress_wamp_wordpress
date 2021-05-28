@@ -73,91 +73,88 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
-	display: block;
+    display: block;
 }
 
 @media screen and (min-width: 37.5em) {
+    .menu-toggle {
+        display: none;
+    }
 
-	.menu-toggle {
-		display: none;
-	}
-
-	.main-navigation ul {
-		display: flex;
-	}
+    .main-navigation ul {
+        display: flex;
+    }
 }
 
 .site-main .comment-navigation,
-.site-main
-.posts-navigation,
-.site-main
-.post-navigation {
-	margin: 0 0 1.5em;
+.site-main .posts-navigation,
+.site-main .post-navigation {
+    margin: 0 0 1.5em;
 }
 
 .comment-navigation .nav-links,
 .posts-navigation .nav-links,
 .post-navigation .nav-links {
-	display: flex;
+    display: flex;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	flex: 1 0 50%;
+    flex: 1 0 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	text-align: end;
-	flex: 1 0 50%;
+    text-align: end;
+    flex: 1 0 50%;
 }
 
 /* Posts and pages
 --------------------------------------------- */
 .sticky {
-	display: block;
+    display: block;
 }
 
 .post,
 .page {
-	margin: 0 0 1.5em;
+    margin: 0 0 1.5em;
 }
 
 .updated:not(.published) {
-	display: none;
+    display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+    margin: 1.5em 0 0;
 }
 
 .page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+    clear: both;
+    margin: 0 0 1.5em;
 }
 
 /* Comments
 --------------------------------------------- */
 .comment-content a {
-	word-wrap: break-word;
+    word-wrap: break-word;
 }
 
 .bypostauthor {
-	display: block;
+    display: block;
 }
 
 /* Widgets
 --------------------------------------------- */
 .widget {
-	margin: 0 0 1.5em;
+    margin: 0 0 1.5em;
 }
 
 .widget select {
-	max-width: 100%;
+    max-width: 100%;
 }
 
 /* Media
@@ -165,86 +162,86 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
-	padding: 0;
+    border: none;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding: 0;
 }
 
 /* Make sure logo link wraps around logo image. */
 .custom-logo-link {
-	display: inline-block;
+    display: inline-block;
 }
 
 /* Captions
 --------------------------------------------- */
 .wp-caption {
-	margin-bottom: 1.5em;
-	max-width: 100%;
+    margin-bottom: 1.5em;
+    max-width: 100%;
 }
 
-.wp-caption img[class*="wp-image-"] {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
+.wp-caption img[class*='wp-image-'] {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
-	margin: 0.8075em 0;
+    margin: 0.8075em 0;
 }
 
 .wp-caption-text {
-	text-align: center;
+    text-align: center;
 }
 
 /* Galleries
 --------------------------------------------- */
 .gallery {
-	margin-bottom: 1.5em;
-	display: grid;
-	grid-gap: 1.5em;
+    margin-bottom: 1.5em;
+    display: grid;
+    grid-gap: 1.5em;
 }
 
 .gallery-item {
-	display: inline-block;
-	text-align: center;
-	width: 100%;
+    display: inline-block;
+    text-align: center;
+    width: 100%;
 }
 
 .gallery-columns-2 {
-	grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .gallery-columns-3 {
-	grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .gallery-columns-4 {
-	grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr);
 }
 
 .gallery-columns-5 {
-	grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(5, 1fr);
 }
 
 .gallery-columns-6 {
-	grid-template-columns: repeat(6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .gallery-columns-7 {
-	grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);
 }
 
 .gallery-columns-8 {
-	grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(8, 1fr);
 }
 
 .gallery-columns-9 {
-	grid-template-columns: repeat(9, 1fr);
+    grid-template-columns: repeat(9, 1fr);
 }
 
 .gallery-caption {
-	display: block;
+    display: block;
 }
 
 /*--------------------------------------------------------------
@@ -257,12 +254,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Hide the Posts Navigation and the Footer when Infinite Scroll is in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-	display: none;
+    display: none;
 }
 
 /* Re-display the Theme Footer when Infinite Scroll has reached its end. */
 .infinity-end.neverending .site-footer {
-	display: block;
+    display: block;
 }
 
 /*--------------------------------------------------------------
@@ -274,71 +271,69 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 /* Text meant only for screen readers. */
 .screen-reader-text {
-	border: 0;
-	clip: rect(1px, 1px, 1px, 1px);
-	clip-path: inset(50%);
-	height: 1px;
-	margin: -1px;
-	overflow: hidden;
-	padding: 0;
-	position: absolute !important;
-	width: 1px;
-	word-wrap: normal !important;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
 }
 
 .screen-reader-text:focus {
-	background-color: #f1f1f1;
-	border-radius: 3px;
-	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-	clip: auto !important;
-	clip-path: none;
-	color: #21759b;
-	display: block;
-	font-size: 0.875rem;
-	font-weight: 700;
-	height: auto;
-	left: 5px;
-	line-height: normal;
-	padding: 15px 23px 14px;
-	text-decoration: none;
-	top: 5px;
-	width: auto;
-	z-index: 100000;
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 700;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
 }
 
 /* Do not show the outline on the skip link target. */
-#primary[tabindex="-1"]:focus {
-	outline: 0;
+#primary[tabindex='-1']:focus {
+    outline: 0;
 }
 
 /* Alignments
 --------------------------------------------- */
 .alignleft {
+    /*rtl:ignore*/
+    float: left;
 
-	/*rtl:ignore*/
-	float: left;
-
-	/*rtl:ignore*/
-	margin-right: 1.5em;
-	margin-bottom: 1.5em;
+    /*rtl:ignore*/
+    margin-right: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .alignright {
+    /*rtl:ignore*/
+    float: right;
 
-	/*rtl:ignore*/
-	float: right;
-
-	/*rtl:ignore*/
-	margin-left: 1.5em;
-	margin-bottom: 1.5em;
+    /*rtl:ignore*/
+    margin-left: 1.5em;
+    margin-bottom: 1.5em;
 }
 
 .aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 1.5em;
+    clear: both;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 1.5em;
 }
 
 /* === My Styles === */
@@ -380,7 +375,12 @@ ul li {
 }
 
 /* === Global === */
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     text-rendering: optimizeLegibility;
     font-weight: bold;
 }
@@ -389,11 +389,12 @@ h1 {
     font-size: 3em;
 }
 
-h1, h2 {
-    margin: 0 0 40px ;
+h1,
+h2 {
+    margin: 0 0 40px;
 }
 
-h3{
+h3 {
     margin: 20px 0;
 }
 
@@ -422,7 +423,8 @@ h4 {
     font-size: 18px;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
     color: #dd5638;
 }
 a:hover {
@@ -430,7 +432,10 @@ a:hover {
     color: #c9302c;
 }
 
-.button, input, .btn, a.btn{
+.button,
+input,
+.btn,
+a.btn {
     text-rendering: optimizeLegibility;
     color: white;
 }
@@ -461,7 +466,6 @@ img {
     background: url('assets/img/tile.jpg') top left repeat;
 }
 
-
 /* === Hero === */
 #hero {
     background: url('assets/img/hero-bg.jpg') 50% 0 no-repeat fixed;
@@ -485,7 +489,7 @@ img {
 
 .price-timeline .price {
     display: inline-block;
-    margin-top: 2%;    
+    margin-top: 2%;
     width: 30%;
     background: #3e4249;
     padding: 10px 20px;
@@ -493,10 +497,9 @@ img {
     align-content: center;
 }
 
-.price-timeline .price:first-child{
+.price-timeline .price:first-child {
     background: #d95131;
 }
-
 
 /* .price-timeline .price span {
     background: #101010;
@@ -518,7 +521,6 @@ img {
     font-weight: normal;
     display: block;
 }
-
 
 /* === Layout === */
 
@@ -558,19 +560,30 @@ section h3 {
 
 /* === Customer Icon Sprites === */
 i.ci {
-	display: inline-block;
-	height: 40px;
-	width: 40px;
-	background: url('assets/img/icon-sprite.png') no-repeat;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: url('assets/img/icon-sprite.png') no-repeat;
 }
 
-.ci.ci-computer 	{ background-position: 0 0; }
-.ci.ci-watch		{ background-position: -40px 0; }
-.ci.ci-calendar		{ background-position: -80px 0; }
-.ci.ci-community	{ background-position: -120px 0; }
-.ci.ci-instructor	{ background-position: -160px 0; }
-.ci.ci-device		{ background-position: -200px 0; }
-
+.ci.ci-computer {
+    background-position: 0 0;
+}
+.ci.ci-watch {
+    background-position: -40px 0;
+}
+.ci.ci-calendar {
+    background-position: -80px 0;
+}
+.ci.ci-community {
+    background-position: -120px 0;
+}
+.ci.ci-instructor {
+    background-position: -160px 0;
+}
+.ci.ci-device {
+    background-position: -200px 0;
+}
 
 /* ===Featurette === */
 #featurette {
@@ -579,7 +592,6 @@ i.ci {
     text-align: center;
     color: white;
 }
-
 
 /* === Share icons === */
 .social-links i.bi {
@@ -629,6 +641,11 @@ i.ci {
     padding-top: 10px;
 }
 
+.testimoniel img {
+    border-radius: 50%;
+    height: auto;
+}
+
 blockquote cite {
     display: block;
     color: #777;
@@ -654,7 +671,6 @@ blockquote cite {
 #signup button {
     font-size: 24px;
 }
-
 
 #footer {
     background: #3e4249;
@@ -682,7 +698,7 @@ blockquote cite {
 
 /* === Media Queries === */
 
-@media screen and (max-width: 991px){
+@media screen and (max-width: 991px) {
     #instructor .container {
         background: rgba(255, 255, 255, 0.8);
         padding: 1px;
@@ -719,8 +735,6 @@ blockquote cite {
     }
 }
 
-
-
 @media screen and (max-width: 568px) {
     #instructor .num {
         height: 100px;
@@ -737,9 +751,10 @@ blockquote cite {
     }
 }
 
-
 /* === Blog === */
-.post, .widget, #comments {
+.post,
+.widget,
+#comments {
     position: relative;
     border: solid 1px #ddd;
     background: white;
@@ -748,8 +763,6 @@ blockquote cite {
     margin-bottom: 10px;
 }
 
-
-
 .post header,
 .post .post-excerpt,
 .post .post-body,
@@ -757,7 +770,7 @@ blockquote cite {
     padding: 20px;
 }
 
-.post header h1, 
+.post header h1,
 .post header h3 {
     margin: 0 0 15px;
     padding: 0 0 15px;
@@ -786,8 +799,6 @@ blockquote cite {
 .post-details i.bi:first-child {
     padding-left: 0;
 }
-
-
 
 /* === Widgets === */
 .widget {
@@ -858,16 +869,16 @@ label {
     font-weight: bold;
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
+input[type='text'],
+input[type='email'],
+input[type='url'],
+input[type='password'],
+input[type='search'],
 textarea {
     color: #666;
     border: 1px solid #ccc;
     border-radius: 3px;
-    display:block;
+    display: block;
     box-sizing: border-box;
     width: 100%;
     padding: 6px 12px;
