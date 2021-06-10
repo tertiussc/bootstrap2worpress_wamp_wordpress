@@ -366,7 +366,7 @@ body {
     margin-right: 3px;
 }
 .navbar-nav li a:hover {
-    color: lightgray;
+    color: #dd5638;
 }
 
 /* Remove Bullet Points */
@@ -435,12 +435,14 @@ a:hover {
 .button,
 input,
 .btn,
-a.btn {
+a.btn,
+input[type='submit'] {
     text-rendering: optimizeLegibility;
     color: white;
 }
 
-.btn {
+.btn,
+input[type='submit'] {
     font-weight: bold;
 }
 
@@ -449,12 +451,14 @@ a.btn {
     border-collapse: #d95131;
 }
 
-.btn-success {
+.btn-success,
+input[type='submit'] {
     background: #79b044;
     border: none;
 }
 
-.btn-success:hover {
+.btn-success:hover,
+input[type='submit']:hover {
     background: #6a9b3d;
 }
 
@@ -766,8 +770,16 @@ blockquote cite {
 .post header,
 .post .post-excerpt,
 .post .post-body,
-#comments .comments-wrap {
-    padding: 20px;
+#comments .comments-area,
+#respond,
+#comments h2,
+.entry-footer {
+    padding: 20px !important;
+}
+
+.post-body p {
+    word-break: break-all;
+    white-space: normal;
 }
 
 .post header h1,
@@ -781,7 +793,7 @@ blockquote cite {
     font-size: 24px;
 }
 
-.post-image {
+.post-image img {
     height: auto;
 }
 
@@ -917,6 +929,18 @@ textarea {
     margin: 40px 0 0;
     padding: 20px 0 0;
     border-top: solid 1px #eee;
+}
+
+/* Wordpress specific comment styles */
+#comments footer {
+    background: none;
+    color: inherit;
+}
+#comments footer a {
+    color: inherit;
+}
+#comments .comment-metadata {
+    margin: 10px 0 0;
 }
 
 /* === Resources === */

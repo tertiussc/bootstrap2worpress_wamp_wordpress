@@ -9,16 +9,18 @@
 
 get_header();
 ?>
+<!-- === Post Content === -->
+<div class="container">
+    <div class="row" id="primary">
+        <main id="content" class="col-sm-8">
 
-	<main id="primary" class="site-main">
+            <?php
+				while ( have_posts() ) :
+				the_post();
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+				get_template_part( 'template-parts/content', get_post_type() );
 
-			get_template_part( 'template-parts/content', get_post_type() );
-
-			the_post_navigation(
+				the_post_navigation(
 				array(
 					'prev_text' => '<span class="nav-subtitle">' . esc_html__( 'Previous:', 'bootstrap2wordpress' ) . '</span> <span class="nav-title">%title</span>',
 					'next_text' => '<span class="nav-subtitle">' . esc_html__( 'Next:', 'bootstrap2wordpress' ) . '</span> <span class="nav-title">%title</span>',
@@ -33,8 +35,13 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-	</main><!-- #main -->
+        </main><!-- #main -->
+        <!-- === Sidebar === -->
+        <aside id="sidebar" class="col-sm-4">
+            <?php get_sidebar();?>
+        </aside>
+    </div>
+</div>
 
 <?php
-get_sidebar();
 get_footer();
