@@ -7,23 +7,24 @@
  * @package Bootstrap_to_Wordpress
  */
 
+
 get_header();
 ?>
+<?php if ( have_posts() ) : ?>
 
-	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<?php
-				the_archive_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
+<section class="feature-image feature-image-default-alt" data-type="background" data-speed="2" style="height: 250px;">
+    <?php
+				the_archive_title( '<h2 class="page-title text-light text-center">', '</h2>' );
+				the_archive_description( '<small class="archive-description text-light text-center lead">', '</small>' );
 				?>
-			</header><!-- .page-header -->
+</section>
+<div class="container">
+    <div id="primary" class="row">
+        <main id="content" class="col-sm-8">
 
-			<?php
-			/* Start the Loop */
-			while ( have_posts() ) :
+            <?php
+	/* Start the Loop */
+		while ( have_posts() ) :
 				the_post();
 
 				/*
@@ -43,9 +44,16 @@ get_header();
 
 		endif;
 		?>
+        </main>
+        <!-- ----------------------------------------------------------
+		# SideBar
+		-------------------------------------------------------------->
+        <aside class="col-sm-4">
+            <?php get_sidebar(); ?>
 
-	</main><!-- #main -->
+        </aside>
+    </div>
+</div>
 
 <?php
-get_sidebar();
 get_footer();

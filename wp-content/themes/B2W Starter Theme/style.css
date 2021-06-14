@@ -70,6 +70,12 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /* Navigation
 --------------------------------------------- */
 
+/* Active menu Style */
+nav ul > li.current-menu-item a {
+    border-bottom: hsl(2, 64%, 48%) solid 2px;
+    padding: 2px;
+}
+
 /* Small menu. */
 .menu-toggle,
 .main-navigation.toggled ul {
@@ -363,7 +369,7 @@ body {
     color: white;
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     font-weight: bold;
-    margin-right: 3px;
+    margin-right: 10px;
 }
 .navbar-nav li a:hover {
     color: #dd5638;
@@ -616,6 +622,7 @@ i.ci {
 #instructor .num {
     display: table;
 }
+
 #instructor .num-content {
     font-size: 30px;
     font-weight: bold;

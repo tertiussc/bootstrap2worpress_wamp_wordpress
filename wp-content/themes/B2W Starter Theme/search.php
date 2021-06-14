@@ -9,21 +9,26 @@
 
 get_header();
 ?>
+<!-- ----------------------------------------------------------
+# Search header
+-------------------------------------------------------------->
+<section class="feature-image feature-image-default-alt" data-type="background" data-speed="2" style="height: 250px;">
+    <h1 class="page-title">
+        <?php
+				/* translators: %s: search query. */
+				printf( esc_html__( 'Search Results for: %s', 'bootstrap2wordpress' ), '<span>' . get_search_query() . '</span>' );
+				?>
+    </h1>
+</section>
+<!-- ----------------------------------------------------------
+# Search Content area
+-------------------------------------------------------------->
+<div class="container">
+    <div id="primary" class="row">
+        <main id="content" class="col-sm-8">
+            <?php if ( have_posts() ) : ?>
 
-	<main id="primary" class="site-main">
-
-		<?php if ( have_posts() ) : ?>
-
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'bootstrap2wordpress' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
-
-			<?php
+            <?php
 			/* Start the Loop */
 			while ( have_posts() ) :
 				the_post();
@@ -46,8 +51,16 @@ get_header();
 		endif;
 		?>
 
-	</main><!-- #main -->
+        </main>
+        <!-- ----------------------------------------------------------
+		# Sidebar
+		-------------------------------------------------------------->
+        <aside class="col-sm-4">
+            <?php get_sidebar();?>
+        </aside>
+    </div>
+</div>
+
 
 <?php
-get_sidebar();
 get_footer();
